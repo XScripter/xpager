@@ -1,0 +1,19 @@
+(function(global, factory) {
+
+  if (typeof module === 'object' && typeof module.exports === 'object') {
+    var $;
+    try { $ = require('jquery'); } catch (e) {}
+
+    module.exports = global.document ?
+      factory(global, $) :
+      function(w) {
+        if (!w.document) {
+          throw new Error('XPager 需要运行在浏览器环境中');
+        }
+        return factory(w, $);
+      };
+  } else {
+    global.XPager = factory(global, global.jQuery || global.Zepto || global.ender || global.$);
+  }
+
+}(typeof window !== 'undefined' ? window : this, function(window, $) {
