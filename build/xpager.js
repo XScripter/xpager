@@ -10,7 +10,7 @@
  * 
  * Licensed under MIT
  * 
- * Released on: April 22, 2016
+ * Released on: April 23, 2016
  */
 (function(global, factory) {
 
@@ -41,7 +41,7 @@
   
     for(i = 0; i < settingKeys.length; i++) {
       key = settingKeys[i];
-      if (options[key] !== void 0) {
+      if (options && (options[key] !== void 0)) {
         pageSettings[key] = options[key];
       }
     }
@@ -119,7 +119,7 @@
     },
   
     _setElement: function(el) {
-      this.$el = $(el);
+      this.$el = el instanceof $ ? el : $(el);
       this.el = this.$el[0];
     },
   
