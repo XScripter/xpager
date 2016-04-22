@@ -48,3 +48,57 @@ var DemoPager = XPager.inherits({
   });
   demoPager.render();
 ```
+```js
+var Pager = require('./pager');
+
+var DemoPager = Pager.inherits({
+  events: {
+    'click .click': 'clickHandler',
+    'click #clickId': 'clickHandler1'
+  },
+
+  render: function() {
+    this.$el.append('<button id="clickId">DBClick</button>');
+  },
+
+  clickHandler: function(e) {
+    console.log('=====> clickHandler');
+  },
+
+  clickHandler1: function(e) {
+    console.log('=====> clickHandler1');
+  }
+});
+
+var demoPager = new DemoPager({
+  el: '#app'
+});
+demoPager.render();
+```
+```js
+import Pager from './pager';
+
+const DemoPager = Pager.inherits({
+  events: {
+    'click .click': 'clickHandler',
+    'click #clickId': 'clickHandler1'
+  },
+
+  render: function() {
+    this.$el.append('<button id="clickId">DBClick</button>');
+  },
+
+  clickHandler: function(e) {
+    console.log('=====> clickHandler');
+  },
+
+  clickHandler1: function(e) {
+    console.log('=====> clickHandler1');
+  }
+});
+
+const demoPager = new DemoPager({
+  el: 'body'
+});
+demoPager.render();
+```
