@@ -1,3 +1,7 @@
+### 构建 ###
+* 构建 `npm run build` 或 `gulp build`
+* 测试 `npm run test`
+
 ### xpager.js ###
 用于封装[常规]页面 JavaScript 代码逻辑, 负责页面生命周期管理, 统一管理事件, 当前版本依赖 jQuery/Function.prototype.bind.
 
